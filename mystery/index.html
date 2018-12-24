@@ -10,102 +10,25 @@
 
 <body>
     <header>
-        <h1>GAS</h1>
-        <div class="sns">
-        <a href="https://twitter.com/nktng117"><img src="img/twitter.png"></a>
-        <a href="https://www.facebook.com/afterschool117"><img src="img/facebook.png"></a>
-        </div>
-        <ul>
-            <li><a href="#about">about</a></li>
-            <li><a href="#works">works</a></li>
-            <li><a href="#contact">contact</a></li>
-        </ul>
-    </header>
-	<div id="contents">
-	  <h1 class="txtEffect">総合力を高め、課題を解決する。</h1>
-	</div>
-    <main>
-    	<p class="works" id="about">about</p>
-        <article class="right clear">
-        <dl class="left_dl">
-        	<dt>skill</dt>
-        	<dd>Java</dd>
-        	<dd>PHP</dd>
-            <dd>Laravel</dd>
-        	<dd>Javascript</dd>
-        	<dd>Go</dd>
-        	<dd>MySQL</dd>
-		<dd>Unity</dd>
-		<dd>C#</dd>
-        </dl>
-        <dl class="right_dl">
-        	<dt>profile</dt>
-        	<dd>氏名：　衣笠　尚暉</dd>
-        	<dd>所属：　筑波大学　生物学類</dd>
-            <dd>職歴：　2017/1 ~ 2018/4 </dd>
-            <dd>　　　　株式会社エウレカ</dd>
-            <dd>　　　　2018/6 ~  </dd>
-            <dd>　　　　株式会社Aidemy</dd>
-        	<dd>年齢：　２２</dd>
-        	<dd>所在：　茨城県つくば市</dd>
-        	<dd>email:　s1410568@u.tsukuba.ac.jp</dd>
-            <dd>資格：　応用情報・英検準１級</dd>
-            <dd>趣味：　読書・街歩き・ヒッチハイク</dd>
-        </dl>
-        <img src="img/naoki.jpg" class="myphoto">
-        </article>
-        http://blog.aidemy.net/entry/2018/06/15/174827
+            <form name="form1" id="id_form1" action="">
 
-        <p class="works" id="works">works</p>
-        <ul>
-        <li>
-            <div class="title">
-                CaT(メディア)
-            </div>
-            <div class="syasin">
-                <a href="http://campustown.wwww.jp/"><img src="img/cat2.jpg" width="100%" height="100%"></a>
-            </div>
-        </li>
-        <li>
-            <div class="title">
-                身の回りの元素(アプリ)
-            </div>
-            <div class="syasin">
-                <a href="https://play.google.com/store/apps/details?id=com.naoki.kinugasa.quiz"><img src="img/element2.jpg" width="100%" height="100%"></a>
-            </div>
-        </li>
-	<li>
-            <div class="title">
-                VR化学実験(VR)
-            </div>
-            <div class="syasin">
-            	<iframe width="302" height="170" src="https://www.youtube.com/embed/MtNwqsSi9Mw" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </li>
-        <li>
-            <div class="title">
-                Share(サービス)
-            </div>
-            <div class="syasin">
-                <a href="https://www.share-rental.com/"><img src="img/share.jpg" width="100%" height="100%"></a>
-            </div>
-        </li>
-        </ul>
-        <p class="works" id="contact">contact</p>
-        <div class="sns">
-        <a href="https://twitter.com/nktng117"><img src="img/twitter.png"></a>
-        <a href="https://www.facebook.com/afterschool117"><img src="img/facebook.png"></a>
-        </div>
+                <select name="color1">
+                    <option>♤</option>
+                    <option>♡</option>
+                    <option>♢</option>
+                    <option>♧</option>
+                </select>
 
-    </main>
-    <footer>
-        <ul>
-            <li><a href="#about">about</a></li>
-            <li><a href="#works">works</a></li>
-            <li>contact</li>
-        </ul>
-        <p>© GASSAN All rights reserved</p>
-    </footer>
+                <input name="textBox1" id="id_textBox1" type="text" value="" />
+                <input type="button" value="Exec" onclick="onButtonClick();" />
+            </form>
+            <hr/>
+            <h1 id="output"></h1>
+            <div id="text" style="text-align:center; font-size: 32px; font-weight: bold;"></div>
+
+
+       
+   
 <script src="jquery.min.js"></script>
 <script>
 $(function() {
@@ -116,6 +39,47 @@ $(function() {
     t.replaceWith(t.text().replace(/(\S)/g, "<span class='c' data-char='$&'>$&</span>"));
   });
 });
+
+function onButtonClick() {
+    title = document.getElementById("output");
+    text = document.getElementById("text");
+    input_m = document.forms.id_form1.color1.selectedIndex;;
+    input_n = document.forms.id_form1.id_textBox1.value;
+    if (input_m == 2 && input_n == 6) {
+        title.innerText = "Question 1  ヒント1";
+        text.innerText = "英字君が面積最大になるように並んだら１人余った。  周の長さが固定されている時、面積最大になる長方形は正方形 ";
+    } if(input_m == 3 && input_n == 3) {
+        title.innerText = "Question 2  ヒント1";
+        text.innerText = " ";
+        var img = document.createElement('img');
+        img.src = 'img/question2.PNG';
+        text.appendChild(img);
+    } if(input_m == 2 && input_n == 7) {
+        title.innerText = "Question 2  ヒント2";
+        text.innerText = "髪の色";
+    } if(input_m == 1 && input_n == 2) {
+        title.innerText = "Question 3  ヒント1";
+        text.innerText = "あゆみが好きなのはS。尚暉が好きなのはL";
+    } if(input_m == 3 && input_n == 1) {
+        title.innerText = "Question 3  ヒント2";
+        text.innerText = "何店舗かあるが、重なるのは1通り。";
+    } if(input_m == 0 && input_n == 5) {
+        title.innerText = "Question 4  ヒント1";
+        text.innerText = "3つ目はれ";
+    } if(input_m == 2 && input_n == 9) {
+        title.innerText = "Question 4  ヒント2";
+        text.innerText = "身の回りの異変に気づけ";
+    } if(input_m == 1 && input_n == 5) {
+        title.innerText = "Question 5  ヒント1";
+        text.innerText = "答えはそこに書かれている";
+    } if(input_m == 3 && input_n == 4) {
+        title.innerText = "Question 5  ヒント2";
+        text.innerText = "逆から読め";
+    } else {
+        // text.innerText = "パスワードが違います";
+    }
+    
+}
 </script>
 </body>
 </html>
